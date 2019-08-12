@@ -19,7 +19,7 @@ const words = ['danny is the best'];
 function init() {
   showWord(words);
 
-  wordInput.addEventListener('input', startMatch)
+  wordInput.addEventListener('input', startMatch);
   setInterval(countdown, 1000);
   setInterval(gameStatus, 100);
 }

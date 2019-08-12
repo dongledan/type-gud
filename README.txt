@@ -9,7 +9,7 @@ mode in mind. The text that you would have to type would be from the Eloquent Ja
 perhaps.
 
 Main Technologies Used:
-React, Phaser
+Phaser
 
 Issues:
 Coded before having a clear plan, not testing as often, keep starting from scratch instead of building ontop. 
