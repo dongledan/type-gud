@@ -11,7 +11,6 @@ const currentWord = document.querySelector('#current-word');
 const scoreDisplay = document.querySelector('#score');
 const timeDisplay = document.querySelector('#time');
 const message = document.querySelector('#message');
-const seconds = document.querySelector('#seconds');
 
 const words = ['danny is the best'];
 
@@ -22,11 +21,11 @@ function init() {
 
   wordInput.addEventListener('input', startMatch)
   setInterval(countdown, 1000);
-  setInterval(checkStatus, 50);
+  setInterval(gameStatus, 100);
 }
 
 function startMatch() {
-  if (matchWords()) {
+  if (match()) {
     isPlaying = true;
     showWord(words);
     wordInput.value = '';
@@ -36,7 +35,7 @@ function startMatch() {
   scoreDisplay.innerHTML = score;
 }
 
-function matchWords() {
+function match() {
   if (wordInput.value === currentWord.innerHTML) {
     message.innerHTML = 'Correcto';
     return true;
@@ -58,7 +57,7 @@ function countdown() {
   timeDisplay.innerHTML = time;  
 }
 
-function checkStatus() {
+function gameStatus() {
   if (!isPlaying && time === 0) {
     message.innerHTML = "Game Over";
     score = -1;
